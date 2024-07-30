@@ -35,7 +35,7 @@ def save_skin_image(url, username, output_dir="images"):
     response = requests.get(url)
     if response.status_code == 200:
         os.makedirs(output_dir, exist_ok=True)
-        file_path = os.path.join(output_dir, f'{username}.jpg')
+        file_path = os.path.join(output_dir, f'{username}.png')
         with open(file_path, 'wb') as img_file:
             img_file.write(response.content)
         return file_path
